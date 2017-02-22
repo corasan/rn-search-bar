@@ -1,0 +1,22 @@
+{
+  "name": "rn-search-bar",
+  "version": "1.0.0",
+  "description": "React Native search bar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corasan/rn-search-bar.git"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Henry Paulino <henrypl360@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/corasan/rn-search-bar/issues"
+  },
+  "homepage": "https://github.com/corasan/rn-search-bar#readme"
+}
