@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { View, TextInput, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, TextInput, Text, StyleSheet, TouchableOpacity, ToastAndroid } from 'react-native';
 
 export default class SearchBar extends Component {
+  static defaultProps = {
+    searchButton: <Text>Search</Text>,
+    searchOnPress: () => ToastAndroid.show('Pressed', ToastAndroid.SHORT)
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -11,7 +16,9 @@ export default class SearchBar extends Component {
           </View>
 
           <View style={styles.searchButton}>
-            <Text>Search</Text>
+            <TouchableOpacity onPress={this.props.searchOnPress}>
+              {this.props.searchButton}
+            </TouchableOpacity>
           </View>
         </View>
       </View>
