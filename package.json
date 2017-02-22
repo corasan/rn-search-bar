@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/corasan/rn-search-bar.git"
   },
+  "peerDependencies": {
+    "react": "^15.4.2"
+  },
   "keywords": [
     "react-native"
   ],
