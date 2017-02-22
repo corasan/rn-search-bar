@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, TextInput, Text, StyleSheet, TouchableOpacity, ToastAndroid } from 'react-native';
+import { View, TextInput, Text, StyleSheet, TouchableOpacity, ToastAndroid, Image } from 'react-native';
 
 export default class SearchBar extends Component {
   static defaultProps = {
-    searchButton: <Text>Search</Text>,
-    searchOnPress: () => ToastAndroid.show('Pressed', ToastAndroid.SHORT)
+    searchButton: <Image source={{uri: 'https://maxcdn.icons8.com/iOS7/PNG/25/Very_Basic/search-25.png'}} style={{height: 30, width: 30}}/>,
+    onPress: () => ToastAndroid.show('Pressed', ToastAndroid.SHORT)
   }
 
   render() {
@@ -16,7 +16,7 @@ export default class SearchBar extends Component {
           </View>
 
           <View style={styles.searchButton}>
-            <TouchableOpacity onPress={this.props.searchOnPress}>
+            <TouchableOpacity onPress={this.props.onPress}>
               {this.props.searchButton}
             </TouchableOpacity>
           </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   searchBar: {
     fontSize: 22,
     paddingVertical: 5,
-    paddingHorizontal: 6
+    paddingHorizontal: 8
   },
   searchBarContainer: {
     borderRadius: 6,
@@ -44,13 +44,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   searchInput: {
-    flex: 0.8,
+    flex: 0.9,
     borderRadius: 6,
   },
   searchButton: {
-    flex: 0.2,
+    flex: 0.1,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 2,
+    marginRight: 4
+  },
+  icon: {
+    height: 30,
+    width: 30
   }
 });
