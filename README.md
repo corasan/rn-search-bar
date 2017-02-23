@@ -1,4 +1,4 @@
-# rn-search-bar
+# rn-search-bar [![npm version](https://badge.fury.io/js/rn-searchbar.svg)](https://badge.fury.io/js/rn-searchbar)
 React Native search bar for Android and iOS
 
 ![screenshot](https://github.com/corasan/rn-search-bar/blob/master/screenshot.png)
