@@ -1,7 +1,7 @@
 # rn-search-bar
 React Native search bar for Android and iOS
 
-[screenshot](https://github.com/corasan/rn-search-bar/blob/master/screenshot.png)
+![screenshot](https://github.com/corasan/rn-search-bar/blob/master/screenshot.png)
 
 ## Installation
 
