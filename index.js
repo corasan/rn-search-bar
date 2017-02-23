@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   searchBar: {
-    fontSize: 22,
+    fontSize: 20,
     paddingVertical: 5,
     paddingHorizontal: 8,
     borderRadius: 6,
