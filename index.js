@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, TextInput, Text, StyleSheet, TouchableOpacity, ToastAndroid, Image } from 'react-native';
 
 export default class SearchBar extends Component {
@@ -24,6 +24,11 @@ export default class SearchBar extends Component {
       </View>
     );
   }
+}
+
+SearchBar.propTypes = {
+  searchButton: React.PropTypes.node,
+  onPress: React.PropTypes.func
 }
 
 const styles = StyleSheet.create({
@@ -52,7 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 2,
-    marginRight: 4
+    marginRight: 6
   },
   icon: {
     height: 30,
