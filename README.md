@@ -15,7 +15,7 @@ export default class Example extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <SearchBar/>
+        <SearchBar searchButton={<Text>Search</Text>} onPress={() => console.log('clicked')}/>
       </View>
     );
   }
