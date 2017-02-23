@@ -15,7 +15,7 @@ export default class Example extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <SearchBar searchButton={<Text>Search</Text>} onPress={() => console.log('clicked')}/>
+        <SearchBar searchButton={<Text>Search</Text>} onPress={(text) => console.log(text)}/>
       </View>
     );
   }
@@ -24,7 +24,7 @@ export default class Example extends Component {
 
 ## Props
 
-| Props          | Type     | Description                                          |
-|----------------|----------|------------------------------------------------------|
-| `searchButton` | node     | Use whatever icon you want or text you want to use   |
-| `onPress`      | function | What you want to do when you press the search button | 
+| Props                | Type     | Description                                          |
+|----------------------|----------|------------------------------------------------------|
+| `searchButton`       | node     | Use whatever icon you want or text you want to use   |
+| `onPress(inputText)` | function | What you want to do when you press the search button |
