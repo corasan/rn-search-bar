@@ -4,12 +4,12 @@ React Native search bar for Android and iOS
 
 ## Installation
 
-`npm i --save rn-searchBar`
+`npm i --save rn-searchbar`
 
 ## Usage
 
 ```javascript
-import SearchBar from 'rn-search-bar';
+import SearchBar from 'rn-searchbar';
 
 export default class Example extends Component {
   render() {
