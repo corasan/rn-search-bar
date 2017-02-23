@@ -15,7 +15,7 @@ const shadowIos = {
 export default class SearchBar extends Component {
   static defaultProps = {
     searchButton: <Image source={{uri: 'https://maxcdn.icons8.com/iOS7/PNG/25/Very_Basic/search-25.png'}} style={{height: 30, width: 30}}/>,
-    onPress: () => ToastAndroid.show('Pressed', ToastAndroid.SHORT)
+    onPress: () => (Platform.OS === 'ios') ? console.log('Clicked') : ToastAndroid.show('Pressed', ToastAndroid.SHORT)
   }
 
   render() {
