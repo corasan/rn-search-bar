@@ -1,5 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import { View, TextInput, Text, StyleSheet, TouchableOpacity, ToastAndroid, Image } from 'react-native';
+import { View, TextInput, Text, StyleSheet, TouchableOpacity, ToastAndroid, Image, Platform } from 'react-native';
+
+const shadowAndroid = {
+  elevation: 3
+}
+
+const shadowIos = {
+  shadowColor: 'black',
+  shadowOpacity: 0.3,
+  shadowRadius: 3,
+  shadowOffset: {width: 0, height: 2}
+}
 
 export default class SearchBar extends Component {
   static defaultProps = {
@@ -10,9 +21,13 @@ export default class SearchBar extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.searchBarContainer}>
+        <View style={[styles.searchBarContainer, (Platform.OS === 'ios') ? shadowIos : shadowAndroid]}>
           <View style={styles.searchInput}>
-            <TextInput style={styles.searchBar} underlineColorAndroid='transparent'/>
+            <TextInput
+              style={[styles.searchBar, (Platform.OS === 'ios' ? {height: 45} : null)]}
+              underlineColorAndroid='transparent'
+              onChangeText={(text) => this.setState({text})}
+            />
           </View>
 
           <View style={styles.searchButton}>
@@ -34,17 +49,15 @@ SearchBar.propTypes = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 80,
-    paddingHorizontal: 16,
   },
   searchBar: {
     fontSize: 22,
     paddingVertical: 5,
-    paddingHorizontal: 8
+    paddingHorizontal: 8,
+    borderRadius: 6,
   },
   searchBarContainer: {
     borderRadius: 6,
-    elevation: 3,
     backgroundColor: 'white',
     flexDirection: 'row',
   },
@@ -60,7 +73,7 @@ const styles = StyleSheet.create({
     marginRight: 6
   },
   icon: {
-    height: 30,
-    width: 30
+    height: 28,
+    width: 28
   }
 });
