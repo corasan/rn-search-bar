@@ -15,7 +15,12 @@ const shadowIos = {
 export default class SearchBar extends Component {
   static defaultProps = {
     searchButton: <Image source={{uri: 'https://maxcdn.icons8.com/iOS7/PNG/25/Very_Basic/search-25.png'}} style={{height: 30, width: 30}}/>,
-    onPress: () => (Platform.OS === 'ios') ? console.log('Clicked') : ToastAndroid.show('Pressed', ToastAndroid.SHORT)
+    onPress: (text) => (Platform.OS === 'ios') ? console.log(`${text}`) : ToastAndroid.show('Pressed', ToastAndroid.SHORT)
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {text: ''}
   }
 
   render() {
@@ -27,11 +32,12 @@ export default class SearchBar extends Component {
               style={[styles.searchBar, (Platform.OS === 'ios' ? {height: 45} : null)]}
               underlineColorAndroid='transparent'
               onChangeText={(text) => this.setState({text})}
+              value={this.state.text}
             />
           </View>
 
           <View style={styles.searchButton}>
-            <TouchableOpacity onPress={this.props.onPress}>
+            <TouchableOpacity onPress={() => this.props.onPress(this.state.text)}>
               {this.props.searchButton}
             </TouchableOpacity>
           </View>
