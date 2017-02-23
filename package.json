@@ -14,7 +14,11 @@
     "react": "^15.4.2"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "react-component",
+    "ios",
+    "android",
+    "search-bar"
   ],
   "author": "Henry Paulino <henrypl360@gmail.com>",
   "license": "MIT",
